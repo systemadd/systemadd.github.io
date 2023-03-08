@@ -217,7 +217,7 @@
             
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-web2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -225,7 +225,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2023/03/05/hello-world/" target="_blank">Hello World</a>
+	  <a class="article-title" href="/2023/03/08/web2/" target="_blank">web2</a>
   
     </h1>
   
@@ -233,8 +233,8 @@
 
   
   
-<a href="/2023/03/05/hello-world/" class="archive-article-date">
-        <time datetime="2023-03-05T09:13:53.320Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
+<a href="/2023/03/08/web2/" class="archive-article-date">
+        <time datetime="2023-03-08T11:44:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-08</time>
 </a>
 
   
@@ -246,19 +246,26 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <h2 id="1-信息收集："><a href="#1-信息收集：" class="headerlink" title="1.信息收集："></a>1.信息收集：</h2><h2 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h2><p><img src="https://www.z4a.net/images/2023/03/08/1843ba2a79ad97951.png"></p>
+<h2 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h2><p><img src="https://www.z4a.net/images/2023/03/08/2a0bd5510e06a5109.png"></p>
+<p>发现现在只开放了两个端口尝试一下全部的端口扫描</p>
+<p><img src="https://www.z4a.net/images/2023/03/08/3.png"></p>
+<p><img src="https://www.z4a.net/images/2023/03/08/4.png"></p>
+<p>漏洞发现</p>
+<p>发现这个有提示信息访问(http没有东西，用nc访问一下那个</p>
+<p><img src="https://www.z4a.net/images/2023/03/08/55e551bbd27a34959.png"></p>
+<p>发现他放回的是一个要你计算然后再返回给他，还要请求1000次，那这个人工计算的太慢了直接用脚本。（这个都是他给出来的信息）</p>
+<p><img src="https://www.z4a.net/images/2023/03/08/634aa59be71be9145.png"><br><img src="https://www.z4a.net/images/2023/03/08/G0PMVSAGLD4NY8WKLP.png"></p>
+<p>这个学长和自己写的他的比较清楚。爆破之后给了三个端口。</p>
+<p><img src="https://www.z4a.net/images/2023/03/08/7.png"></p>
+<p>用工具去挨个访问一下端口，22端口就直接打开了。</p>
+<p><img src="https://www.z4a.net/images/2023/03/08/8.png"></p>
+<p>打开了这个22端口连接ssh但是这个没有思路，但是(http还没有枚举目录，爆破一下目录。</p>
+<p><img src="https://www.z4a.net/images/2023/03/08/9.png"></p>
+<p>发现两个目录访问就看到了shell</p>
+<p><img src="https://www.z4a.net/images/2023/03/08/10.png"><br><img src="https://www.z4a.net/images/2023/03/08/11.png"></p>
+<p>用burp抓包一下</p>
+<p><img src="https://www.z4a.net/images/2023/03/08/13.png"></p>
 
     
 
@@ -274,7 +281,112 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2023/03/05/hello-world/">展开全文 >></a>
+      <a class="article-more-a" href="/2023/03/08/web2/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-web1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2023/03/05/web1/" target="_blank">web1</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2023/03/05/web1/" class="archive-article-date">
+        <time datetime="2023-03-05T09:53:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-03-05</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="1-信息收集："><a href="#1-信息收集：" class="headerlink" title="1.信息收集："></a>1.信息收集：</h2><h2 id="主机发现"><a href="#主机发现" class="headerlink" title="主机发现"></a>主机发现</h2><p><img src="https://img1.imgtp.com/2023/02/27/OCLl8Orx.png"></p>
+<h2 id="目录遍历"><a href="#目录遍历" class="headerlink" title="目录遍历"></a>目录遍历<img src="https://img1.imgtp.com/2023/02/27/oOfOtpzZ.png"></h2><p><img src="https://img1.imgtp.com/2023/02/27/oOfOtpzZ.png"></p>
+<h2 id="端口扫描"><a href="#端口扫描" class="headerlink" title="端口扫描"></a>端口扫描</h2><p><img src="https://img1.imgtp.com/2023/02/27/Yk1yKnWo.png"></p>
+<p>漏洞发现</p>
+<p>当访问这个download.php时直接跳测试有没有任意文件下载。</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/hKHckzaH.png"></p>
+<p>经行抓包测试发现可以z</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/fclMbMWe.png"></p>
+<p>但是这里学长给的测试更加好</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/0QwrijVa.png"></p>
+<p>通过kali里面的searchploit发现有nda因为这个没有出现目录可以直接通过find去查</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/skg6iyS8.png"></p>
+<p><img src="https://img1.imgtp.com/2023/02/27/Wcobbi1b.png"></p>
+<h2 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h2><p>这个直接有了漏洞提示</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/bJjHnDLm.png"></p>
+<p>通过查找apapche的配置文件查找到了他的加密密码（测试很久很久）</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/QHabR8xR.png"></p>
+<p>在复制密码在放入kali通过join爆破</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/Fr8ms8Rx.png"></p>
+<p>直接获取这个webadmin的登录密码</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/LmMlROo5.png"></p>
+<p>在通过给的信息直接访问robots.txt</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/XSlkr8dp.png"></p>
+<p>挨个访问这个几个目录看到这个命令执行的地方直接反弹shell</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/tohB0dU5.png"></p>
+<p>kali生成shell文件在开启服务让靶机访问问下载shell</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/nmWdEwpT.png"><br><img src="https://img1.imgtp.com/2023/02/27/13Iuoax5.png"><br><img src="https://img1.imgtp.com/2023/02/27/TfrtwUML.png"></p>
+<p>通过ls看到这个马已经上传上去了然后在建立连接</p>
+<p><img src="https://img1.imgtp.com/2023/02/27/Elqz5CfL.png"><br><img src="https://img1.imgtp.com/2023/02/27/CtzyNkbK.png"></p>
+<h2 id="今日笔记："><a href="#今日笔记：" class="headerlink" title="今日笔记："></a>今日笔记：</h2><p>1.观察所有的信息把信息收集做到全面。<br>2.不能死盯着一个功能点<br>3.任意文件读取没有其他敏感信息可以去配置文件可能有意外收获<br>apache ：&#x2F;etc&#x2F;apache2&#x2F;apache2.conf (还有apache2的目录可以找找，如果不记得可以参考自己kali的文件路径)<br>nginx :  &#x2F;etc&#x2F;nginx&#x2F;nginx.conf<br>4.searchsploit 不仅可以搜索cms还可以搜索各种信息，但是路径找不到可以直接用find 查找。<br>5.download 可能有任意文件！！！</p>
+<p>由于测试不能借助连接网络提权无法完成</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2023/03/05/web1/">展开全文 >></a>
     </p>
     
 
